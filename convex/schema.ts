@@ -10,7 +10,7 @@ export default defineSchema({
         proSince: v.optional(v.number()), //there is no date in v
         lemonSqueezyCustomerId: v.optional(v.string()), //if user is customer
         lemonSqueezyOrderId: v.optional(v.string()),
-    }).index("byUserId", ["userId"]), //for fetching
+    }).index("by_user_id", ["userId"]), //for fetching
 
     codeExecutions: defineTable({
         userId: v.string(),
@@ -18,7 +18,7 @@ export default defineSchema({
         code: v.string(),
         output: v.optional(v.string()),
         error: v.optional(v.string())
-    }).index("byUserId", ["userId"]),
+    }).index("by_user_id", ["userId"]),
 
     snippets: defineTable({
         userId: v.string(),
