@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { useClerk } from "@clerk/nextjs";
 import useMounted from "@/hooks/useMounted";
 import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
+import ShareSnippetDialog from "./ShareSnippetDialog";
 
 function EditorPanel() {
   const clerk = useClerk()
@@ -144,6 +145,7 @@ function EditorPanel() {
 
         </div>
       </div>
+        {isShareDialogOpen && <ShareSnippetDialog onClose={() => setIsShareDialogOpen(false)} />}
     </div>
 
   
